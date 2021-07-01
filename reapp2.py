@@ -31,7 +31,7 @@ st.subheader('Multi Model Predictions')
 
 @st.cache
 def load_data():
-	#df=pd.read_excel('D://CIS//Shiny//STREAMLIT//realestateapp_streamlit-master//data.xls')
+	
     df=pd.read_excel('data.xls')
     df=df.drop(['country'],axis=1)
     df=df[df['price']>0]
@@ -57,7 +57,7 @@ params={
 
 @st.cache
 def get_locations(zip):
-	url='https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q={}&facet=state&facet=timezone&facet=dst'.format(zip)
+	url='https://public.opendatasoft.com/api/records/1.0/search/?dataset=georef-united-states-of-america-zc-point&q={}&facet=state&facet=timezone&facet=dst'.format(zip)
 	data=requests.get(url).json()
 	lat=data['records'][0]['fields']['latitude']
 	lng=data['records'][0]['fields']['longitude']
