@@ -30,7 +30,7 @@ def run_status():
 st.subheader('Ingeniería predictiva:: Predicción múltiples modelos')
 @st.cache
 def load_data():
-	df=pd.read_excel('D://CIS//Shiny//STREAMLIT//realestateapp_streamlit-master//data.xls')
+	df=pd.read_excel('data.xls')
 	df=df.drop(['country'],axis=1)
 	df=df[df['price']>0]
 	df.rename(columns={'statezip':'zip'}, inplace=True)
