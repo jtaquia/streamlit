@@ -55,7 +55,7 @@ params={
 
 @st.cache
 def get_locations(zip):
-	url='https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q={}&facet=state&facet=timezone&facet=dst'.format(zip)
+	url='https://public.opendatasoft.com/api/records/1.0/search/?dataset=georef-united-states-of-america-zc-point&q={}&facet=state&facet=timezone&facet=dst'.format(zip)
 	data=requests.get(url).json()
 	lat=data['records'][0]['fields']['latitude']
 	lng=data['records'][0]['fields']['longitude']
